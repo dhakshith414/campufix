@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 import { Zap, ArrowRight, CheckCircle, Shield, Clock, BarChart2, ChevronRight } from 'lucide-react';
 
 const statusSteps = [
@@ -32,6 +33,9 @@ const features = [
 ];
 
 export default function LandingPage() {
+  const { user } = useAuth();
+  const dashUrl = user?.role === 'admin' ? '/admin' : user?.role === 'staff' ? '/staff' : '/dashboard';
+
   return (
     <div style={{ minHeight: '100vh', background: 'var(--color-paper)' }}>
       {/* Navigation */}
@@ -60,12 +64,20 @@ export default function LandingPage() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-            <Link to="/login" className="btn btn-ghost" style={{ color: 'var(--color-navy)' }}>
-              Log In
-            </Link>
-            <Link to="/register" className="btn btn-secondary">
-              Get Started
-            </Link>
+            {user ? (
+              <Link to={dashUrl} className="btn btn-secondary">
+                Open {user.role === 'admin' ? 'Admin Dashboard' : user.role === 'staff' ? 'Work Queue' : 'Dashboard'}
+              </Link>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-ghost" style={{ color: 'var(--color-navy)' }}>
+                  Log In
+                </Link>
+                <Link to="/register" className="btn btn-secondary">
+                  Get Started
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
@@ -140,13 +152,22 @@ export default function LandingPage() {
           </p>
 
           <div style={{ display: 'flex', gap: 'var(--space-4)', flexWrap: 'wrap' }}>
-            <Link to="/register" className="btn btn-primary btn-lg">
-              Report an Issue
-              <ArrowRight size={18} />
-            </Link>
-            <Link to="/login" className="btn btn-outline-light btn-lg">
-              Sign In
-            </Link>
+            {user ? (
+              <Link to={dashUrl} className="btn btn-primary btn-lg">
+                Go to {user.role === 'admin' ? 'Admin Dashboard' : user.role === 'staff' ? 'Work Queue' : 'My Dashboard'}
+                <ArrowRight size={18} />
+              </Link>
+            ) : (
+              <>
+                <Link to="/register" className="btn btn-primary btn-lg">
+                  Report an Issue
+                  <ArrowRight size={18} />
+                </Link>
+                <Link to="/login" className="btn btn-outline-light btn-lg">
+                  Sign In (Student / Staff / Admin)
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </section>

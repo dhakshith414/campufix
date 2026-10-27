@@ -48,6 +48,12 @@ export default function LoginPage() {
     }
   };
 
+  const fillDemo = (email, password) => {
+    setForm({ email, password });
+    setErrors({});
+    setApiError('');
+  };
+
   return (
     <div style={{
       minHeight: '100vh',
@@ -188,20 +194,49 @@ export default function LoginPage() {
             </div>
           </form>
 
-          {/* Demo credentials hint */}
+          {/* Demo credentials 1-click fill */}
           <div style={{
-            marginTop: 'var(--space-8)',
+            marginTop: 'var(--space-6)',
             padding: 'var(--space-4)',
             background: 'var(--color-paper-200)',
             borderRadius: 'var(--radius-lg)',
             fontSize: 'var(--text-xs)',
             color: 'var(--color-slate-dark)',
           }}>
-            <div style={{ fontWeight: 600, marginBottom: 'var(--space-2)' }}>Demo accounts (after running seed script):</div>
-            <div style={{ fontFamily: 'var(--font-mono)', display: 'flex', flexDirection: 'column', gap: 4 }}>
-              <span>admin@campusfix.demo / Admin@123</span>
-              <span>staff@campusfix.demo / Staff@123</span>
-              <span>student@campusfix.demo / Student@123</span>
+            <div style={{ fontWeight: 600, marginBottom: 'var(--space-2)' }}>
+              Quick Demo Fill (Click to populate):
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 'var(--space-2)' }}>
+              <button
+                type="button"
+                className="btn btn-outline btn-xs"
+                onClick={() => fillDemo('admin@campusfix.demo', 'Admin@123')}
+                style={{ fontSize: '11px', padding: '6px 4px', textAlign: 'center', justifyContent: 'center' }}
+                title="Fill Admin credentials"
+              >
+                🛡️ Admin
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline btn-xs"
+                onClick={() => fillDemo('staff@campusfix.demo', 'Staff@123')}
+                style={{ fontSize: '11px', padding: '6px 4px', textAlign: 'center', justifyContent: 'center' }}
+                title="Fill Maintenance Staff credentials"
+              >
+                🔧 Staff
+              </button>
+              <button
+                type="button"
+                className="btn btn-outline btn-xs"
+                onClick={() => fillDemo('student@campusfix.demo', 'Student@123')}
+                style={{ fontSize: '11px', padding: '6px 4px', textAlign: 'center', justifyContent: 'center' }}
+                title="Fill Student credentials"
+              >
+                🎓 Student
+              </button>
+            </div>
+            <div style={{ fontSize: '10px', color: 'var(--color-slate)', marginTop: 'var(--space-2)' }}>
+              Click any role above, then hit <strong>Sign In</strong> to explore that dashboard.
             </div>
           </div>
         </div>
