@@ -11,19 +11,32 @@
 
 ---
 
+## 🎥 Project Demo & Live Deployment
+
+> **Walkthrough Video:** **[▶ Watch the CampusFix Demo](https://drive.google.com/drive/folders/1B5OgIJpwyMGwcWaAlbfqnUK45lrvp59i?usp=drive_link)**  
+> *Demonstrates student fault reporting, executive operations analytics, administrative issue management, staff assignment, and maintenance progress tracking.*
+
+### 🌐 Live Application Links
+- **Frontend Client (Vercel):** [https://campufix.vercel.app](https://campufix.vercel.app)
+- **Backend API Health Check (Render):** [https://campufix.onrender.com/api/health](https://campufix.onrender.com/api/health)
+- **Source Code Repository:** [https://github.com/dhakshith414/campufix](https://github.com/dhakshith414/campufix)
+
+---
+
 ## 📑 Table of Contents
 
-1. [System Architecture](#-system-architecture)
-2. [Key Features & Role-Based Access (RBAC)](#-key-features--role-based-access-rbac)
-3. [Finite State Machine & Issue Lifecycle](#-finite-state-machine--issue-lifecycle)
-4. [Database Schema & Models](#-database-schema--models)
-5. [Security & Defensive Engineering](#-security--defensive-engineering)
-6. [REST API Specification](#-rest-api-specification)
-7. [Tech Stack](#-tech-stack)
-8. [Local Development Setup](#-local-development-setup)
-9. [Automated Test Suite](#-automated-test-suite)
-10. [Production Deployment Guide](#-production-deployment-guide)
-11. [Academic Project Report & Defense Q&A](#-academic-project-report--defense-qa)
+1. [Project Demo & Live Deployment](#-project-demo--live-deployment)
+2. [System Architecture](#-system-architecture)
+3. [Key Features & Role-Based Access (RBAC)](#-key-features--role-based-access-rbac)
+4. [Finite State Machine & Issue Lifecycle](#-finite-state-machine--issue-lifecycle)
+5. [Database Schema & Models](#-database-schema--models)
+6. [Security & Defensive Engineering](#-security--defensive-engineering)
+7. [REST API Specification](#-rest-api-specification)
+8. [Tech Stack](#-tech-stack)
+9. [Local Development Setup](#-local-development-setup)
+10. [Automated Test Suite](#-automated-test-suite)
+11. [Production Deployment Guide](#-production-deployment-guide)
+12. [Academic Project Report & Defense Q&A](#-academic-project-report--defense-qa)
 
 ---
 
